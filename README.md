@@ -41,3 +41,12 @@ Diagrammes en boîte :
 |-----------------------|-----------------------|-----------------------|
 | ![Diagramme 4](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/edcf5119-9116-48c3-a5c8-449b73ee71ad) | ![Diagramme 5](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/a941b63d-d1bb-4c61-b668-20c0df3633c7) | ![Diagramme 6](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/f2158060-4368-484e-96d1-f15e8c97daa5) |
 | **Indice de Jaccard**     | **Erreur relative sur le volume**     | **Sensibilité**     |
+
+Temps d'inférence sur CPU:
+![temps_inference](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/4c2d8db4-4f63-499a-a358-da9e07d28176)
+
+## Méthodologie
+### Méthodes de segmentation de la matière grise 
+1. Convertir le jeu de données du format BIDS vers le format nnunet: https://github.com/ivadomed/utilities/blob/main/dataset_conversion/convert_bids_to_nnUNetV2.py
+
+2. 
