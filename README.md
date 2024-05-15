@@ -35,7 +35,7 @@ Diagrammes en boîte :
 | Diagramme 1           | Diagramme 2           | Diagramme 3           |
 |-----------------------|-----------------------|-----------------------|
 | ![Diagramme 1](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/3cd6cf5e-49c3-4fd2-b6e0-a377cd539798) | ![Diagramme 2](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/59730646-8ea2-4231-bbcd-a15ad80e02d7) | ![Diagramme 3](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/c953f2dc-0a7c-4661-989e-b676ac656501) |
-| **Description 1**     | **Description 2**     | **Description 3**     |
+| **Distance de surface moyenne**     | **Description 2**     | **Description 3**     |
 
 | Diagramme 4           | Diagramme 5           | Diagramme 6           |
 |-----------------------|-----------------------|-----------------------|
