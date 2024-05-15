@@ -30,7 +30,7 @@ légende :
 ### Résultats quantitatifs
 # Résultats
 
-Voici un tableau de nos diagrammes en boîte :
+Diagrammes en boîte :
 
 | Diagramme 1           | Diagramme 2           | Diagramme 3           |
 |-----------------------|-----------------------|-----------------------|
