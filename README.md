@@ -9,3 +9,4 @@ La segmentation manuelle de ces tissus par le radiologue est longue, expliquant 
 
 ## Résultats 
 
+![comparaison](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/7a34bf27-d9c4-4be5-ba39-e74c8d4ba9ae)
