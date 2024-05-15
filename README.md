@@ -49,4 +49,9 @@ Temps d'inférence sur CPU:
 ### Méthodes de segmentation de la matière grise 
 1. Convertir le jeu de données du format BIDS vers le format nnunet: https://github.com/ivadomed/utilities/blob/main/dataset_conversion/convert_bids_to_nnUNetV2.py
 
-2. 
+2. Entrainer le modèle :
+a) vérifier l'intégrité du jeu de données
+'nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity -c 2d 3d_fullres 3d_lowres'
+b) lancer l'entrainement sur GPU
+'CUDA_VISIBLE_DEVICES=X nnUNetv2_train DATASET_ID CONFIG FOLD'
+
