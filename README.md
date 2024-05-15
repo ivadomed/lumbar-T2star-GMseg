@@ -50,8 +50,14 @@ Temps d'inférence sur CPU:
 1. Convertir le jeu de données du format BIDS vers le format nnunet: https://github.com/ivadomed/utilities/blob/main/dataset_conversion/convert_bids_to_nnUNetV2.py
 
 2. Entrainer le modèle :
-a) vérifier l'intégrité du jeu de données
-'nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity -c 2d 3d_fullres 3d_lowres'
-b) lancer l'entrainement sur GPU
-'CUDA_VISIBLE_DEVICES=X nnUNetv2_train DATASET_ID CONFIG FOLD'
+a) vérifier l'intégrité du jeu de données\n
+nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity -c 2d 3d_fullres 3d_lowres\n
+b) lancer l'entrainement sur GPU\n
+CUDA_VISIBLE_DEVICES=X nnUNetv2_train DATASET_ID CONFIG FOLD\n
+
+3. Cacluler des métriques avec ANIMA : https://github.com/ivadomed/model_seg_sci/blob/main/testing/compute_anima_metrics.py
+
+4. Tracer des diagrammes en boîte :
+
+
 
