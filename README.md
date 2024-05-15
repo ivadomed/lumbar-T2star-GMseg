@@ -29,3 +29,12 @@ légende :
 
 ### Résultats quantitatifs
 
+| Diagramme 1           | Diagramme 2           | Diagramme 3           |
+|-----------------------|-----------------------|-----------------------|
+| ![Diagramme 1](![ContourMeanDistance_comparison_boxplot](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/3cd6cf5e-49c3-4fd2-b6e0-a377cd539798)) | ![Diagramme 2](![Dice_comparison_boxplot](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/59730646-8ea2-4231-bbcd-a15ad80e02d7)) | ![Diagramme 3](![HausdorffDistance_comparison_boxplot](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/c953f2dc-0a7c-4661-989e-b676ac656501)) |
+| **Description 1**     | **Description 2**     | **Description 3**     |
+
+| Diagramme 4           | Diagramme 5           | Diagramme 6           |
+|-----------------------|-----------------------|-----------------------|
+| ![Diagramme 4](![Jaccard_comparison_boxplot](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/edcf5119-9116-48c3-a5c8-449b73ee71ad)) | ![Diagramme 5](![RelativeVolumeError_comparison_boxplot](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/a941b63d-d1bb-4c61-b668-20c0df3633c7)) | ![Diagramme 6](![SurfaceDistance_comparison_boxplot](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/c4c1f9ef-2468-48f0-85b0-6de930c30282)) |
+| **Description 4**     | **Description 5**     | **Description 6**     |
