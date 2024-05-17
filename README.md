@@ -66,8 +66,27 @@ Des modifications ont été aportées aux scripts pour la méthode basée sur le
 
 2. Fusionner les labels SC et GM à l'aide du script : fusion_labels_GM_SC.py
 
-3. 
-4. 
+3. Penser à modifier le fichier dataset.json pour indiquer a nnunet qu'on souhaite travailler avec des régions:
+
+{
+    "channel_names": {
+        "0": "background"
+    },
+    "labels": {
+        "background": 0,
+        "SC": [1,2],
+	      "GM": [2]
+    },
+    "regions_class_order":[1,2],
+    "numTraining": 41,
+    "file_ending": ".nii.gz",
+    "overwrite_image_reader_writer": "SimpleITKIO"
+}
+
+
+4. Lancer l'entrainement
+   
+5ß. Calculer les métriques avec le script 
 
 
 
