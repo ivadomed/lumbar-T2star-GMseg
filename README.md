@@ -46,7 +46,7 @@ Temps d'inférence sur CPU:
 ![temps_inference](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/4c2d8db4-4f63-499a-a358-da9e07d28176)
 
 ## Méthodologie
-### Méthodes de segmentation de la matière grise 
+### Méthode de segmentation de la matière grise 
 1. Convertir le jeu de données du format BIDS vers le format nnunet: https://github.com/ivadomed/utilities/blob/main/dataset_conversion/convert_bids_to_nnUNetV2.py
 
 2. Entrainer le modèle :
@@ -57,7 +57,17 @@ CUDA_VISIBLE_DEVICES=X nnUNetv2_train DATASET_ID CONFIG FOLD\n
 
 3. Cacluler des métriques avec ANIMA : https://github.com/ivadomed/model_seg_sci/blob/main/testing/compute_anima_metrics.py
 
-4. Tracer des diagrammes en boîte :
+4. Tracer des diagrammes en boîte : Utiliser le script boxplot_comparison.py
+
+### Méthode de segmentation de la matière grise et blanche basée sur les régions (region based)
+Des modifications ont été aportées aux scripts pour la méthode basée sur les régions
+
+1. Convertir le jeu de données du format BIDS vers le format nnunet: Utiliser le script convert_bids_to_nnUNetV2_region_based.py. Il faudra ensuite fusionner les labels SC et GM.
+
+2. Fusionner les labels SC et GM à l'aide du script : fusion_labels_GM_SC.py
+
+3. 
+4. 
 
 
 
