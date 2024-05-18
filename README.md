@@ -45,50 +45,6 @@ Diagrammes en boîte :
 Temps d'inférence sur CPU:
 ![temps_inference](https://github.com/ivadomed/lumbar-T2star-GMseg/assets/110342907/4c2d8db4-4f63-499a-a358-da9e07d28176)
 
-## Méthodologie
-### Méthode de segmentation de la matière grise 
-1. Convertir le jeu de données du format BIDS vers le format nnunet: https://github.com/ivadomed/utilities/blob/main/dataset_conversion/convert_bids_to_nnUNetV2.py
-
-2. Entrainer le modèle :
-a) vérifier l'intégrité du jeu de données\n
-nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity -c 2d 3d_fullres 3d_lowres\n
-b) lancer l'entrainement sur GPU\n
-CUDA_VISIBLE_DEVICES=X nnUNetv2_train DATASET_ID CONFIG FOLD\n
-
-3. Cacluler des métriques avec ANIMA : https://github.com/ivadomed/model_seg_sci/blob/main/testing/compute_anima_metrics.py
-
-4. Tracer des diagrammes en boîte : Utiliser le script boxplot_comparison.py
-
-### Méthode de segmentation de la matière grise et blanche basée sur les régions (region based)
-Des modifications ont été aportées aux scripts pour la méthode basée sur les régions
-
-1. Convertir le jeu de données du format BIDS vers le format nnunet: Utiliser le script convert_bids_to_nnUNetV2_region_based.py. Il faudra ensuite fusionner les labels SC et GM.
-
-2. Fusionner les labels SC et GM à l'aide du script : fusion_labels_GM_SC.py
-
-3. Penser à modifier le fichier dataset.json pour indiquer a nnunet qu'on souhaite travailler avec des régions:
-
-{
-    "channel_names": {
-        "0": "background"
-    },
-    "labels": {
-        "background": 0,
-        "SC": [1,2],
-	      "GM": [2]
-    },
-    "regions_class_order":[1,2],
-    "numTraining": 41,
-    "file_ending": ".nii.gz",
-    "overwrite_image_reader_writer": "SimpleITKIO"
-}
-
-
-4. Lancer l'entrainement
-   
-5. Calculer les métriques avec le script : compute_anima_metrics_RB.py
-
-
 
 ## Méthodologie
 
@@ -141,4 +97,7 @@ Des modifications ont été apportées aux scripts pour la méthode basée sur l
    }
 
 
+4. **Lancer l'entrainement**
+   
+5. **Calculer les métriques avec le script** : `compute_anima_metrics_RB.py`
 
