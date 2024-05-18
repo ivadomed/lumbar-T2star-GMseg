@@ -263,8 +263,8 @@ def get_test_metrics_by_dataset(pred_folder, gt_folder, output_folder, anima_bin
 def main():
 
     # get the ANIMA binaries path
-   # cmd = r'''grep "^anima = " ~/.anima/config.txt | sed "s/.* = //"'''
-    cmd = r'''grep "^anima = " /Users/laurinethyssen/Documents/projet3/anima/.anima/config.txt | sed "s/.* = //"'''
+    cmd = r'''grep "^anima = " ~/.anima/config.txt | sed "s/.* = //"'''
+    
     anima_binaries_path = subprocess.check_output(cmd, shell=True).decode('utf-8').strip('\n')
     print('ANIMA Binaries Path:', anima_binaries_path)
     # version = subprocess.check_output(anima_binaries_path + 'animaSegPerfAnalyzer --version', shell=True).decode('utf-8').strip('\n')
@@ -281,12 +281,11 @@ def main():
     label_type = args.label_type
 
     output_folder = os.path.join(pred_folder, f"anima_stats")
-    print("laurine pred_folder")
+    
     print(pred_folder)
     print(gt_folder)
     print(output_folder)
     print(anima_binaries_path)
-    print("dataset name")
     print(dataset_name)
     print(label_type)
     if not os.path.exists(output_folder):
