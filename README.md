@@ -86,7 +86,59 @@ Des modifications ont été aportées aux scripts pour la méthode basée sur le
 
 4. Lancer l'entrainement
    
-5ß. Calculer les métriques avec le script 
+5. Calculer les métriques avec le script : compute_anima_metrics_RB.py
+
+
+
+## Méthodologie
+
+### Méthode de segmentation de la matière grise
+
+1. **Convertir le jeu de données du format BIDS vers le format nnUNet :**
+   - Utiliser le script [convert_bids_to_nnUNetV2.py](https://github.com/ivadomed/utilities/blob/main/dataset_conversion/convert_bids_to_nnUNetV2.py).
+
+2. **Entraîner le modèle :**
+   - a) Vérifier l'intégrité du jeu de données :
+     ```bash
+     nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity -c 2d 3d_fullres 3d_lowres
+     ```
+   - b) Lancer l'entraînement sur GPU :
+     ```bash
+     CUDA_VISIBLE_DEVICES=X nnUNetv2_train DATASET_ID CONFIG FOLD
+     ```
+
+3. **Calculer des métriques avec ANIMA :**
+   - Utiliser le script [compute_anima_metrics.py](https://github.com/ivadomed/model_seg_sci/blob/main/testing/compute_anima_metrics.py).
+
+4. **Tracer des diagrammes en boîte :**
+   - Utiliser le script `boxplot_comparison.py`.
+
+### Méthode de segmentation de la matière grise et blanche basée sur les régions (region based)
+
+Des modifications ont été apportées aux scripts pour la méthode basée sur les régions :
+
+1. **Convertir le jeu de données du format BIDS vers le format nnUNet :**
+   - Utiliser le script `convert_bids_to_nnUNetV2_region_based.py`. Il faudra ensuite fusionner les labels SC et GM.
+
+2. **Fusionner les labels SC et GM :**
+   - Utiliser le script `fusion_labels_GM_SC.py`.
+
+3. **Modifier le fichier `dataset.json` pour indiquer à nnUNet qu'on souhaite travailler avec des régions :**
+   ```json
+   {
+       "channel_names": {
+           "0": "background"
+       },
+       "labels": {
+           "background": 0,
+           "SC": [1,2],
+           "GM": [2]
+       },
+       "regions_class_order": [1, 2],
+       "numTraining": 41,
+       "file_ending": ".nii.gz",
+       "overwrite_image_reader_writer": "SimpleITKIO"
+   }
 
 
 
